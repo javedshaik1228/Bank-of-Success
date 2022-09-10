@@ -8,7 +8,7 @@ namespace BOS{
             virtual void closeAccount() = 0;
             virtual bool withdraw(double amt) = 0;  //doesnt need accNum as parameter since it is invoked by an acc object
             virtual bool deposit(double amt) = 0;
-            virtual void transferFunds(long toAcc, double amt) = 0;
+            //virtual void transferFunds(long toAcc, double amt) = 0;
             virtual bool checkActive() = 0;
     };
 }
