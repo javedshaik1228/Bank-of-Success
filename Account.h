@@ -4,15 +4,18 @@
 #include <string>
 #include <vector>
 #include "IAccount.h"
+#include "Dependencies.h"
 
 namespace BOS{
 
     class Account : public IAccount{
         private:
+            static long _autoAccNo;
             long _accNumber;
             std::string _name;
             std::string _pin;
             double _balance;
+            PrivelegeType _privelege;
             bool _isActive;
             std::string _activationDate;
             std::string _closingDate;
@@ -25,14 +28,17 @@ namespace BOS{
             void setName(std::string name);
             void setPin(std::string pin);
             void setBalance(double balance);
+            void setPrivelege(short privelege);
             void setIsActive(bool isActive);
             void setActivationDate(std::string activationDate);
             void setClosingDate(std::string closingDate);
             void setTransferToday(std::string date,double transfers);
             long getAccNumber();
             std::string getName();
-            std::string setPin();
+            std::string getPin();
             double getBalance();
+            short getPrivelege();
+            string getBuiltPrivelege();
             bool getIsActive();
             std::string getActivationDate();
             std::string getClosingDate();
