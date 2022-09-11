@@ -9,5 +9,11 @@ namespace BOS{
             long _regNo;
         public:
             //implement getters and setters
+            void setCompanyName(std::string companyName);
+            void setWebsite(std::string website);
+            void setRegno(long regNo);
+            std::string getCompanyName();
+            std::string getWebsite();
+            long getRegno();
     };
 }
