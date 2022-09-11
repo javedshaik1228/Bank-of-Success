@@ -4,7 +4,7 @@ using namespace std;
 
 #include "CustomConsole.h"
 
-namespace Lab9
+namespace BOS
 {
 	string CustomConsole::ReadString()
 	{
@@ -46,5 +46,11 @@ namespace Lab9
 		short s;
 		cin >> s;
 		return s;
+	}
+
+	long CustomConsole::ReadLong() {
+		long l;
+		cin >> l;
+		return l;
 	}
 }

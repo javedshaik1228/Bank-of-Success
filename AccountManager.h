@@ -1,23 +1,24 @@
-#include <unordered_map>
+#pragma once
+
+#include <iostream>
+#include <map>
 #include <string>
 #include "Account.h"
 
+using namespace std;
 
 namespace BOS{
     class AccountManager{
         private:
-            std::unordered_map<long id, Account* acc>;
-            std::string transferLog;
-            AccountManager* _instance;
-            AccountManager(){
-                //empty
-            }
+            map<long, Account*> _accounts;
+            string _transferLog;
+            
         public:
             static AccountManager* getInstance();
             void printTransferLog();
-            void printMenu();
-            void openAccount();
-
+            //void printMenu();
+            void openAccount(Account* account);
+            ~AccountManager();
     };
 
 

@@ -39,5 +39,7 @@ namespace BOS
 		static char ReadChar();
 
 		static short ReadShort();
+
+		static long ReadLong();
 	};
 }

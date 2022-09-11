@@ -1,8 +1,9 @@
+#pragma once
+
 #include <string>
-#include "Account.h"
 
 namespace BOS{
-    class IAccount{
+    class IAccount {
         public:
             //pure virtual funs, implementations to be done in child classes (Account, Savings, Current classes)
             virtual void closeAccount() = 0;
