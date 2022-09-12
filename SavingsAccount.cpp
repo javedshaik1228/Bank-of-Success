@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <ctime>
 #include "SavingsAccount.h"
 #include "CustomConsole.h"
 #include "Dependencies.h"
@@ -9,8 +11,8 @@ namespace BOS{
 void SavingsAccount::setDOB(std::string dob){
     _dob=dob;
 }
-void SavingsAccount::setGender(char gender){
-    _gender=gender;
+void SavingsAccount::setGender(Gender gender){
+    _gender = gender;
 }
 void SavingsAccount::setNum(long phoneNum){
     _phoneNum=phoneNum;
@@ -18,16 +20,30 @@ void SavingsAccount::setNum(long phoneNum){
 std::string SavingsAccount::getDOB(){
   return _dob;
 }
-char SavingsAccount::getGender(){
+Gender SavingsAccount::getGender(){
     return _gender;
+}
+string SavingsAccount::getBuiltGender() {
+	short gender = short(_gender);
+	string res = "";
+	switch(gender) {
+		case 1: res = "Male";
+			break;
+		case 2: res = "Female";
+			break;
+		case 3: res = "Others";
+			break;
+		//default: res = "N/A";
+	}
+	return res;
 }
 long SavingsAccount::getNum(){
     return _phoneNum;
 }
 
-SavingsAccount::SavingsAccount() { //No need to call Parent class(Account) Parameterless constructor as compiler calls it automatically
-	cout << "Enter DOB(dd/mm/yyyy): ";
-	_dob = CustomConsole::ReadString();
+SavingsAccount::SavingsAccount(string dob) { //No need to call Parent class(Account) Parameterless constructor as compiler calls it automatically
+
+	_dob = dob;
 	short option;
 	while(1) {
 		cout << "1. Male" << endl;

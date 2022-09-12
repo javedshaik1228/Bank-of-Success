@@ -23,13 +23,16 @@ namespace BOS{
         return _regNo;
     }
     
-    CurrentAccount::CurrentAccount() { //No need to call Parent class(Account) Parameterless constructor as compiler calls it automatically
+    CurrentAccount::CurrentAccount(long regNo) { //No need to call Parent class(Account) Parameterless constructor as compiler calls it automatically
+    
+    	_regNo = regNo;
     	cout << "Enter Company Name: ";
     	_companyName = CustomConsole::ReadString();
     	cout << "Enter Company Website: ";
     	_website = CustomConsole::ReadString();
-    	cout << "Enter Company Registration Number: ";
-    	_regNo = CustomConsole::ReadLong();
     	
     	/*Usually we call a setter which validates the data sent and then inputs the data into the data members. But we're not going over the top with such implementations now. We are just going to take inputs and initialize the data members directly */
+}
+
+   CurrentAccount::~CurrentAccount() {}
 }

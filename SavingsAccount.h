@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include "Account.h"
 #include "Dependencies.h"
@@ -8,15 +10,17 @@ namespace BOS{
             std::string _dob;
             Gender _gender;
             long _phoneNum;
+            SavingsAccount();
         public:
             //implement getters and setters
-            SavingsAccount();
+            SavingsAccount(string dob);
             ~SavingsAccount();
             void setDOB(std::string dob);
-            void setGender(char gender);
+            void setGender(Gender gender);
             void setNum(long phoneNum);
             std::string getDOB();
-            char getGender();
+            Gender getGender();
+            string getBuiltGender();
             long getNum();
     };
 }

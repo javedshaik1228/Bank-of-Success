@@ -21,8 +21,8 @@ void Account::setBalance(double balance){
     _balance=balance;
 }
 
-void Account::setPrivelege(short privelege) {
-	_privelege = PrivelegeType(privelege);
+void Account::setPrivilege(short privelege) {
+	_privilege = PrivilegeType(privelege);
 }
 
 void Account::setIsActive(bool isActive){
@@ -34,7 +34,7 @@ void Account::setActivationDate(std::string activationDate){
 void Account::setClosingDate(std::string closingDate){
     _closingDate=closingDate;
 }
-void Account::setTransferToday(std::string date,double transfers){
+void Account::setTransferToday(std::string date, double transfers){
     _transfersToday[date].push_back(transfers);
 }
 long Account::getAccNumber(){
@@ -49,20 +49,22 @@ std::string Account::getPin(){
 double Account::getBalance(){
     return _balance;
 }
-short Account::getPrivelege() {
-	return short(_privelege);
+short Account::getPrivilege() {
+	return short(_privilege);
 }
-string Account::getBuiltPrivelege() {
-	short option = getPrivelege();
-	swtich(option) {
-		case 1: return "PREMIUM";
+string Account::getBuiltPrivilege() {
+	short option = getPrivilege();
+	string res = "";
+	switch(option) {
+		case 1: res = "PREMIUM";
 			break;
-		case 2: return "GOLD";
+		case 2: res = "GOLD";
 			break;
-		case 3: return "SILVER";
+		case 3: res =  "SILVER";
 			break;
-		default: return "INVALID";
+		default: res = "INVALID";
 	}
+	return res;
 }
 
 bool Account::getIsActive(){
@@ -74,11 +76,8 @@ std::string Account::getActivationDate(){
 std::string Account::getClosingDate(){
      return _closingDate;
 }
-std::unordered_map< std::string , std::vector<double> > Account::getTransferToday(){
-    return _transfersToday;
-}
 void Account::closeAccount(){
-    Account::setIsActive(0);
+    setIsActive(0);
     cout << "Enter today's Date(dd/mm/yyyy): ";
     setClosingDate(CustomConsole::ReadString());
 }
@@ -132,13 +131,17 @@ Account::Account() {
 		cout << "Please enter a valid choice" << endl;
 		}
 	}
-	_privelege = PrivelegeType(option);
+	_privilege = PrivilegeType(option);
 	_isActive = 1;
-	_cout << "Enter today's Date(dd/mm/yyyy): ";
+	cout << "Enter today's Date(dd/mm/yyyy): ";
 	_activationDate = CustomConsole::ReadString();
 	
 	/*Usually we call a setter which validates the data sent and then inputs the data into the data members. But we're not going over the top with such implementations now. We are just going to take inputs and initialize the data members directly */
 }
 
 Account::~Account() {}
+
+//Defining pure virtual functions of IAccount Interface
+
 }
+
