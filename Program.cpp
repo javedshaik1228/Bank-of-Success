@@ -12,10 +12,17 @@ using namespace BOS;
 
 int main() {
 	//Account Manager Instance
-	AccountManager accManager;
+	AccountManager* accManager = AccountManager::getInstance();
 	
-	//AccountFactory Singleton Instance
-	AccountFactory* accFactory = AccountFactory::createFactoryInstance();
+	//AccountFactory 
+	while(1){
+		accManager->printMenu();
+		cout<<"Do you want to continue: y/n ";
+		if(CustomConsole::ReadChar() == 'y')
+			continue;
+		else
+			break;
+	}
 	
 	
 	

@@ -27,7 +27,7 @@ namespace BOS{
         public:
             Account();
             virtual ~Account();
-            //implement getters and setters
+            //setters
             void setAccNumber(long accNumber);
             void setName(std::string name);
             void setPin(std::string pin);
@@ -37,19 +37,25 @@ namespace BOS{
             void setActivationDate(std::string activationDate);
             void setClosingDate(std::string closingDate);
             void setTransferToday(std::string date,double transfers);
-            long getAccNumber();
-            std::string getName();
-            std::string getPin();
-            double getBalance();
-            short getPrivilege();
-            string getBuiltPrivilege();
-            bool getIsActive();
-            std::string getActivationDate();
-            std::string getClosingDate();
+
+            //getters
+            long getAccNumber() const;
+            std::string getName() const;
+            std::string getPin() const;
+            double getBalance() const;
+            short getPrivilege() const;
+            string getBuiltPrivilege() ;
+            bool getIsActive() const;
+            std::string getActivationDate() const;
+            std::string getClosingDate() const;
+
+            //member functions
             virtual void closeAccount();
             virtual bool withdraw(double amt);
             virtual bool deposit(double amt);
             virtual bool checkActive();
+            virtual bool checkPin(std::string pin);
+
     };
 
 

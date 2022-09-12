@@ -9,7 +9,7 @@ namespace BOS{
         private:
             std::string _dob;
             Gender _gender;
-            long _phoneNum;
+            std::string _phoneNum;
             SavingsAccount();
         public:
             //implement getters and setters
@@ -17,10 +17,10 @@ namespace BOS{
             ~SavingsAccount();
             void setDOB(std::string dob);
             void setGender(Gender gender);
-            void setNum(long phoneNum);
+            void setNum(std::string phoneNum);
             std::string getDOB();
             Gender getGender();
             string getBuiltGender();
-            long getNum();
+            std::string getNum();
     };
 }

@@ -8,16 +8,14 @@
 namespace BOS{
 
     class AccountFactory{
-    	    static int _count;
-    	    Account* createSavingsAccount();
-    	    Account* createCurrentAccount();
+    	    static IAccount* createSavingsAccount();
+    	    static IAccount* createCurrentAccount();
     	    static AccountFactory* _instance;
             AccountFactory(){
                 //empty
             }
         public:
-            static Account* createAccount();
-            static AccountFactory* createFactoryInstance();
+            static IAccount* createAccount(int type);
             ~AccountFactory();
     };
 

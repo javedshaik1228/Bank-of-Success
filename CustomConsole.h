@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 namespace BOS
 {
@@ -12,7 +13,7 @@ namespace BOS
 		/// </summary>
 		/// <returns></returns>
 	public:
-		static string ReadString();
+		static std::string ReadString();
 
 		/// <summary>
 		/// Method to read float values from the console

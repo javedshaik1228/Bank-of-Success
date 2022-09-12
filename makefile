@@ -1,11 +1,14 @@
-bank: Program.o Account.o AccountFactory.o AccountManager.o SavingsAccount.o CurrentAccount.o CustomConsole.o
-	g++ -o bank Program.o Account.o AccountFactory.o AccountManager.o SavingsAccount.o CurrentAccount.o CustomConsole.o
+bank: Program.o Account.o AccountFactory.o AccountManager.o SavingsAccount.o CurrentAccount.o CustomConsole.o AccountReport.o
+	g++ -o bank Program.o Account.o AccountFactory.o AccountManager.o SavingsAccount.o CurrentAccount.o CustomConsole.o AccountReport.o
 
 Program.o: Program.cpp Account.h AccountFactory.h AccountManager.h SavingsAccount.h CurrentAccount.h CustomConsole.h IAccount.h Dependencies.h
 	g++ -c Program.cpp
 
 Account.o: Account.cpp Account.h CustomConsole.h Dependencies.h
 	g++ -c Account.cpp
+
+AccountReport.o: AccountReport.cpp AccountReport.h
+	g++ -c AccountReport.cpp
 
 AccountFactory.o: AccountFactory.cpp AccountFactory.h Account.h CustomConsole.h SavingsAccount.h CurrentAccount.h
 	g++ -c AccountFactory.cpp

@@ -14,7 +14,7 @@ void SavingsAccount::setDOB(std::string dob){
 void SavingsAccount::setGender(Gender gender){
     _gender = gender;
 }
-void SavingsAccount::setNum(long phoneNum){
+void SavingsAccount::setNum(std::string phoneNum){
     _phoneNum=phoneNum;
 }
 std::string SavingsAccount::getDOB(){
@@ -37,7 +37,7 @@ string SavingsAccount::getBuiltGender() {
 	}
 	return res;
 }
-long SavingsAccount::getNum(){
+std::string SavingsAccount::getNum(){
     return _phoneNum;
 }
 
@@ -59,7 +59,7 @@ SavingsAccount::SavingsAccount(string dob) { //No need to call Parent class(Acco
 	}
 	_gender = Gender(option);
 	cout << "Enter Phone Number: ";
-	_phoneNum = CustomConsole::ReadLong();
+	_phoneNum = CustomConsole::ReadString();
 	
 	/*Usually we call a setter which validates the data sent and then inputs the data into the data members. But we're not going over the top with such implementations now. We are just going to take inputs and initialize the data members directly */
 }
