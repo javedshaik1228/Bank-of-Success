@@ -52,8 +52,6 @@ namespace BOS {
 
 		
 	}
-	
-	AccountManager::~AccountManager() {}
 
 	void AccountManager::accountReport(){
 		AccountReport::DisplayAccounts(_accounts);
@@ -110,6 +108,13 @@ namespace BOS {
 				std::cout<<"Invalid Choice! "<<std::endl;
 				break;
 		}
+	}
+
+	AccountManager::~AccountManager(){
+		for (auto iacc = _accounts.begin(); iacc != _accounts.end(); iacc++){
+			delete iacc->second;
+		}
+		delete _instance;
 	}
 
 

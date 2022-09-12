@@ -10,7 +10,6 @@ namespace BOS{
     class AccountFactory{
     	    static IAccount* createSavingsAccount();
     	    static IAccount* createCurrentAccount();
-    	    static AccountFactory* _instance;
             AccountFactory(){
                 //empty
             }

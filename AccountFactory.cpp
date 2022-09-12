@@ -10,8 +10,6 @@
 using namespace std;
 
 namespace BOS{
-	
-	AccountFactory::~AccountFactory() {}
 
     IAccount* AccountFactory::createSavingsAccount() {
     	IAccount* acc;
@@ -68,5 +66,9 @@ namespace BOS{
         
         return AccountFactory::createAccount(choice);
     }
+
+	AccountFactory::~AccountFactory(){
+			//empty
+	}
 
 }
